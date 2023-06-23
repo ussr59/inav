@@ -1,0 +1,1 @@
+target_stm32f303xc(ICIT-F3 SKIP_RELEASES)
