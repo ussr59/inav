@@ -23,19 +23,17 @@
 #include "drivers/timer.h"
 
 const timerHardware_t timerHardware[] = {
-    // up to 10 Motor Outputs
-    DEF_TIM(TIM1,  CH3N, PB15, TIM_USE_MC_MOTOR | TIM_USE_FW_MOTOR,               0), // PWM1  - PB15 - NONE
-    DEF_TIM(TIM15, CH1,  PB14, TIM_USE_MC_MOTOR | TIM_USE_FW_MOTOR,               0), // PWM2  - PB14 - DMA1_CH5
-    DEF_TIM(TIM1,  CH1,  PA8,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM3  - PA8  - DMA1_CH2
-    DEF_TIM(TIM8,  CH2N, PB0,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM4  - PB0  - DMA2_CH5
-    DEF_TIM(TIM16, CH1,  PA6,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM5  - PA6  - DMA1_CH3
-    DEF_TIM(TIM2,  CH3,  PA2,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM6  - PA2  - DMA1_CH1
-    DEF_TIM(TIM8,  CH3N, PB1,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM7  - PB1  - DMA2_CH1
-    DEF_TIM(TIM17, CH1,  PA7,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO | TIM_USE_ANY, 0), // PWM8  - PA7  - DMA1_CH7
-    DEF_TIM(TIM3,  CH2,  PA4,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM9  - PA4  - DMA_NONE
-    DEF_TIM(TIM2,  CH2,  PA1,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO,               0), // PWM10 - PA1  - DMA1_CH7
 
-    DEF_TIM(TIM2,  CH4,  PA3,  TIM_USE_PPM,                                       0), // PPM   - PA3  - DMA1_CH7
+    DEF_TIM(TIM4,  CH4,  PB9,  TIM_USE_MC_MOTOR | TIM_USE_FW_MOTOR, 0),   // S1_OUT, PWM1
+    DEF_TIM(TIM16, CH1,  PB8,  TIM_USE_MC_MOTOR | TIM_USE_FW_MOTOR, 0),   // S2_OUT, PWM2
+    DEF_TIM(TIM17, CH1,  PB5,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0),   // S3_OUT, PWM3, UP(2,1)  ????
+    DEF_TIM(TIM3,  CH2,  PA4,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0),   // S4_OUT, PWM4  - PA4  - DMA_NONE
+    DEF_TIM(TIM1,  CH1,  PA8,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0),   // S5_OUT, PWM5
+    DEF_TIM(TIM3,  CH3,  PB0,  TIM_USE_MC_MOTOR | TIM_USE_FW_SERVO, 0),   // S6_OUT,  D1_ST7
+
+   // PPM PORT - Also USART2 RX (AF5)
+    DEF_TIM(TIM2,  CH4,  PA3,  TIM_USE_PPM,                         0),   // PPM   - PA3  - TIM2_CH4, TIM15_CH2 - PWM13
+
 };
 
 const int timerHardwareCount = sizeof(timerHardware) / sizeof(timerHardware[0]);

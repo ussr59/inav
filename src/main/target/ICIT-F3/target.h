@@ -23,13 +23,8 @@
 #define HW_PIN                  PB2
 #define BRUSHED_ESC_AUTODETECT
 
-// LED's V1
-#define LED0                    PB4
-#define LED1                    PB5
-
-// LED's V2
-#define LED0_A                  PB8
-#define LED1_A                  PB9
+// LED's V3
+#define LED0                    PB3
 
 #define BEEPER                  PA5
 
@@ -72,16 +67,11 @@
 
 #define USE_VCP
 #define USE_UART1 // Not connected - TX (PB6) RX PB7 (AF7)
-#define USE_UART2 // Receiver - RX (PA3)
 #define USE_UART3 // Not connected - 10/RX (PB11) 11/TX (PB10)
 #define SERIAL_PORT_COUNT       4
-#define AVOID_UART2_FOR_PWM_PPM
 
-#define UART1_TX_PIN            PB6
-#define UART1_RX_PIN            PB7
-
-#define UART2_TX_PIN            PA2
-#define UART2_RX_PIN            PA3
+#define UART1_TX_PIN            PA9
+#define UART1_RX_PIN            PA10
 
 #define UART3_TX_PIN            PB10
 #define UART3_RX_PIN            PB11
@@ -92,14 +82,9 @@
 #define I2C2_SCL                PA9
 #define I2C2_SDA                PA10
 
-// SPI3
-// PA15 38 SPI3_NSS
-// PB3  39 SPI3_SCK
-// PB4  40 SPI3_MISO
-// PB5  41 SPI3_MOSI
 
 #define USE_SPI
-#define USE_SPI_DEVICE_3
+#define USE_SPI_DEVICE_2
 
 #define USE_ADC
 #define ADC_INSTANCE            ADC2
@@ -123,15 +108,18 @@
 #define RX_CHANNELS_TAER
 
 // Number of available PWM outputs
-#define MAX_PWM_OUTPUT_PORTS    10
+#define MAX_PWM_OUTPUT_PORTS    6
 
 #define USE_SERIAL_4WAY_BLHELI_INTERFACE
 
-// IO - assuming 303 in 64pin package, TODO
+
+// IO - stm32f303cc in 48pin package
 #define TARGET_IO_PORTA         0xffff
 #define TARGET_IO_PORTB         0xffff
-#define TARGET_IO_PORTC         0xffff
-#define TARGET_IO_PORTD         (BIT(2))
-#define TARGET_IO_PORTF         (BIT(0)|BIT(1)|BIT(4))
+#define TARGET_IO_PORTC         (BIT(13)|BIT(14)|BIT(15))
+#define TARGET_IO_PORTF         (BIT(0)|BIT(1)|BIT(3)|BIT(4))
+
 
 #define PCA9685_I2C_BUS         BUS_I2C2
+
+#define USED_TIMERS             ( TIM_N(1) | TIM_N(2) | TIM_N(3) | TIM_N(4) | TIM_N(16) | TIM_N(17) )
