@@ -17,53 +17,40 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "AFF3" // ALIENFLIGHT F3
+#define TARGET_BOARD_IDENTIFIER "ICITF3" // ICIT-F3
 
 #define USE_HARDWARE_REVISION_DETECTION
 #define HW_PIN                  PB2
 #define BRUSHED_ESC_AUTODETECT
 
+
 // LED's V3
 #define LED0                    PB3
 
-#define BEEPER                  PA5
 
 #define USE_EXTI
 #define USE_MPU_DATA_READY_SIGNAL
 //#define DEBUG_MPU_DATA_READY_INTERRUPT
 
-// Using MPU6050 for the moment.
-#define USE_IMU_MPU6050
-#define IMU_MPU6050_ALIGN       CW270_DEG
-#define MPU6050_I2C_BUS         BUS_I2C2
 
-#define USE_IMU_MPU6500
-#define IMU_MPU6500_ALIGN       CW270_DEG
-#define MPU6500_CS_PIN          PA15
-#define MPU6500_SPI_BUS         BUS_SPI3
+#define USE_IMU_MPU9255
+#define IMU_MPU9255_ALIGN       CW270_DEG
+#define MPU9255_CS_PIN          PB12
+#define MPU9255_SPI_BUS         BUS_SPI2
 
-#define USE_IMU_MPU9250
-#define IMU_MPU9250_ALIGN       CW270_DEG
-#define MPU9250_CS_PIN          PA15
-#define MPU9250_SPI_BUS         BUS_SPI3
 
-// No baro support.
-//#define USE_BARO
-//#define USE_BARO_MS5611
-
-// option to use MPU9150 or MPU9250 integrated AK89xx Mag
+// from SPARKY2
 #define USE_MAG
-#define MAG_I2C_BUS             BUS_I2C2
-#define USE_MAG_MPU9250
-#define MAG_MPU9250_ALIGN       CW0_DEG
-#define USE_MAG_AK8963
-#define USE_MAG_AK8975
-#define USE_MAG_HMC5883
-#define USE_MAG_MAG3110
-#define USE_MAG_QMC5883
-#define USE_MAG_IST8310
-#define USE_MAG_IST8308
-#define USE_MAG_LIS3MDL
+#define USE_MAG_MPU9255
+#define MAG_MPU9255_ALIGN       CW0_DEG
+
+
+// ????????
+#define M25P16_CS_PIN           PB6
+#define M25P16_SPI_BUS          BUS_SPI2
+#define USE_FLASHFS
+#define USE_FLASH_M25P16
+
 
 #define USE_VCP
 #define USE_UART1 // Not connected - TX (PB6) RX PB7 (AF7)
@@ -86,6 +73,7 @@
 #define USE_SPI
 #define USE_SPI_DEVICE_2
 
+
 #define USE_ADC
 #define ADC_INSTANCE            ADC2
 #define ADC_CHANNEL_1_PIN       PA4
@@ -106,6 +94,7 @@
 #define SERIALRX_PROVIDER       SERIALRX_SPEKTRUM2048
 #define SERIALRX_UART           SERIAL_PORT_USART3
 #define RX_CHANNELS_TAER
+
 
 // Number of available PWM outputs
 #define MAX_PWM_OUTPUT_PORTS    6
