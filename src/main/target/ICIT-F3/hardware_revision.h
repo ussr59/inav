@@ -20,7 +20,7 @@
 
 typedef enum icit3HardwareRevision_t {
     ICITF3_UNKNOWN = 0,
-    ICITF3_REV_1  // MPU9255 (SPI)
+    ICITF3_REV1  // MPU9255 (SPI)
 } icitf3HardwareRevision_e;
 
 extern uint8_t hardwareRevision;

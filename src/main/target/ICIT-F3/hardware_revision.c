@@ -42,7 +42,7 @@ void detectHardwareRevision(void)
     delayMicroseconds(40);  // allow configuration to settle
 
     if (IORead(HWDetectPin)) {
-        hardwareRevision = ICITF3_REV_1;
+        hardwareRevision = ICITF3_REV1;
     }
    //else {
    //     hardwareRevision = ICIYF3_REV_2;
@@ -51,23 +51,4 @@ void detectHardwareRevision(void)
 
 void updateHardwareRevision(void)
 {
-}
-
-const extiConfig_t *selectMPUIntExtiConfigByHardwareRevision(void)
-{
-    // MPU_INT output on V1 PA15
-    static const extiConfig_t alienFlightF3V1MPUIntExtiConfig = {
-        .tag = IO_TAG(PA15)
-    };
-    // MPU_INT output on V2 PB13
-    static const extiConfig_t alienFlightF3V2MPUIntExtiConfig = {
-        .tag = IO_TAG(PB13)
-    };
-
-    if (hardwareRevision == AFF3_REV_1) {
-        return &alienFlightF3V1MPUIntExtiConfig;
-    }
-    else {
-        return &alienFlightF3V2MPUIntExtiConfig;
-    }
 }

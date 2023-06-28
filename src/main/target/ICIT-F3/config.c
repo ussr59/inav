@@ -27,7 +27,7 @@
 // alternative defaults settings for BlueJayF4 targets
 void targetConfiguration(void)
 {
-    if (hardwareRevision == ICITF3_REV1 || hardwareRevision == ICITF3_REV2) {
+    if (hardwareRevision == ICITF3_REV1) {
         gyroConfigMutable()->gyro_align = CW180_DEG;
         accelerometerConfigMutable()->acc_align  = CW180_DEG;
     }
