@@ -39,17 +39,20 @@
 #define MPU9255_SPI_BUS         BUS_SPI2
 
 
-// from SPARKY2
+/*** MAG & BARO ***/
 #define USE_MAG
 #define USE_MAG_MPU9255
 #define MAG_MPU9255_ALIGN       CW0_DEG
 
+#define USE_BARO_MS5611
+#define MS5611_SPI_BUS         BUS_SPI2
+#define MS5611_CS_PIN          PA15
 
-// ????????
-#define M25P16_CS_PIN           PB6
-#define M25P16_SPI_BUS          BUS_SPI2
+
+#define W25Q64_CS_PIN           PB6
+#define W25Q64_SPI_BUS          BUS_SPI2
 #define USE_FLASHFS
-#define USE_FLASH_M25P16
+#define USE_FLASH_W25Q64
 
 
 #define USE_VCP
